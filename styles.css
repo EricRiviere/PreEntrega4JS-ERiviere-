@@ -47,3 +47,10 @@ a:visited {
 footer i {
   font-size: 2rem;
 }
+
+/*CART*/
+
+.cart-img {
+  max-width: 150px !important;
+  height: auto;
+}

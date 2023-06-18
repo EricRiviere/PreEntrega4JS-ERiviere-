@@ -420,8 +420,8 @@ function renderCart() {
     let productIndex = cart.indexOf(product);
     let productElement = `
 <li class="list-group-item">
-  <div class="row text-center">
-    <div class"col">
+  <div class="row">
+    <div class="col">
       <div class="mt-2">PRODUCT:</div>
       <div class="mt-2">${product.productName}</div>
       <div class="mt-2">Price: ${product.productPrice} AUD $</div>
@@ -429,7 +429,7 @@ function renderCart() {
       <a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1" href="#" onclick="removeProduct(${productIndex})"><i class="bi bi-dash-lg"></i></a><a class="mt-1 mx-1 btn border-1 py-1" href="#">${product.amount}</a><a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1" onclick="plusProductsCart(${productIndex})" href="#"><i class="bi bi-plus-lg"></i></a>
     </div>
     <div class="col">
-      <img src="../${product.productImage}" class"img-fluid card-img-top">
+      <img src="/${product.productImage}" class="img-fluid cart-img">
     </div>
   </div>
 </li>
