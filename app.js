@@ -473,7 +473,7 @@ function emptyCart() {
     cart.pop();
   }
   cartElement.innerHTML = "";
-  renderCartIcon();
+  numProdInCartElement.innerText = "";
   total = 0;
   totalElement.innerText = total;
 }
@@ -505,15 +505,25 @@ function printTicket() {
   }
 
   const ticketTotalElement = document.createElement("div");
+  ticketTotalElement.classList.add("mt-2");
   ticketTotalElement.innerHTML = `<strong>Total:</strong> ${total} AUD $`;
 
   const dateElement = document.createElement("div");
+  dateElement.classList.add("mt-2");
   dateElement.innerHTML = `<strong>Date:</strong> ${currentDate}`;
+
+  const reloadButton = document.createElement("button");
+  reloadButton.classList.add("mt-2", "btn", "btn-dark");
+  reloadButton.innerText = "BUY AGAIN";
+  reloadButton.addEventListener("click", function () {
+    location.reload();
+  });
 
   ticketContainer.appendChild(ticketHeader);
   ticketContainer.appendChild(productList);
   ticketContainer.appendChild(ticketTotalElement);
   ticketContainer.appendChild(dateElement);
+  ticketContainer.appendChild(reloadButton);
 
   const ticketContainerDiv = document.querySelector(".cart");
   ticketContainerDiv.innerHTML = "";

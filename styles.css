@@ -1,3 +1,25 @@
+/*BODY*/
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/*SECTIONS*/
+
+.section-title {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /*NAVBAR*/
 
 .navbar {
@@ -17,8 +39,21 @@ li img {
   height: auto;
 }
 
-.mt-10 {
-  margin-top: 10vh !important;
+.push {
+  height: 10vh;
+}
+
+/*ICONS*/
+
+footer i {
+  font-size: 2rem;
+}
+
+/*CART*/
+
+.cart-img {
+  max-width: 150px !important;
+  height: auto;
 }
 
 /*FOOTER*/
@@ -40,17 +75,4 @@ a:visited {
   line-height: 2vh;
   padding-top: 2vh;
   font-size: smaller;
-}
-
-/*ICONS*/
-
-footer i {
-  font-size: 2rem;
-}
-
-/*CART*/
-
-.cart-img {
-  max-width: 150px !important;
-  height: auto;
 }

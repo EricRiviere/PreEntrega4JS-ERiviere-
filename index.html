@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!--ICON-->
+    <link rel="icon" type="image/jpg" href="iconos/maap-icon.png" />
+    <!--GFONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <!--BOOTSTRAP-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -18,6 +26,16 @@
     />
     <!--CSS-->
     <link rel="stylesheet" href="styles.css" />
+    <title>MAAP | Performance Cycling Apparel & Cycling Kits</title>
+    <!--META DESCRIPTION/KEYWORDS-->
+    <meta
+      name="description"
+      content="We propel cycling forward with Australian cycling apparel that was born in Melbourne but made its mark the planet over. Kick-start your adventure with MAAP."
+    />
+    <meta
+      name="keywords"
+      content="Cycling Apparel, cycling gear, maillots, culotes, cycling jerseys, bib shorts, cycling jackets, cycling shorts, cycling accessories"
+    />
   </head>
   <body>
     <div class="container-fluid navbar fixed-top">
@@ -39,7 +57,7 @@
             >CATEGORIES</a
           >
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#newSeason">New Season</a></li>
+            <li><a class="dropdown-item" href="#push">New Season</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#man">Man</a></li>
             <li><a class="dropdown-item" href="#woman">Woman</a></li>
@@ -57,7 +75,7 @@
         data-bs-target="#offcanvasExample"
         aria-controls="offcanvasExample"
       >
-        <i class="bi bi-cart-check"></i>
+        <i class="bi bi-cart3"></i>
         <span class="numberOfProductsInCart"></span>
       </button>
 
@@ -97,13 +115,27 @@
       </div>
     </div>
     <!--NEW SEASON-->
-    <div class="mt-10 containe-fluid" id="newSeason">
-      <img class="img-fluid" src="images/bannerNS.avif" alt="" />
+    <div class="push" id="push"></div>
+    <!--
+    <div class="containe-fluid" id="newSeason">
+      <img
+        class="img-fluid position-relative"
+        src="images/bannerNS.avif"
+        alt="banner New Season"
+      />
+      <h1 class="position-absolute">MAAP NEW SESON</h1>
+    </div>
+    -->
+    <div class="bg-image img-fluid position-relative">
+      <img src="images/bannerNS.avif" class="w-100" />
+      <div class="position-absolute bottom-50 text-light section-title">
+        <h1 class="p-2 m-0">MAAP NEW SESON</h1>
+      </div>
     </div>
     <div class="container-fluid gallery">
       <div class="container-fluid gallery">
         <div class="row section-header">
-          <h2 class="mt-2 text-center">NEW SEASON MAILLOTS</h2>
+          <h2 class="mt-2 text-center">NEW SEASON JERSEYS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -180,7 +212,7 @@
           </div>
         </div>
         <div class="row">
-          <h2 class="mt-2 text-center">NEW SEASON CULOTES & JACKETS</h2>
+          <h2 class="mt-2 text-center">NEW SEASON BIBS & JACKETS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -277,13 +309,16 @@
       </div>
     </div>
     <!--MAN-->
-    <div class="mt-10 containe-fluid" id="man">
-      <img class="img-fluid" src="images/bannerMan.webp" alt="" />
+    <div id="man" class="mt-5 bg-image img-fluid position-relative">
+      <img src="images/bannerMan.webp" class="w-100" />
+      <div class="position-absolute bottom-50 text-light section-title">
+        <h2 class="p-2 m-0">MAN</h2>
+      </div>
     </div>
     <div class="container-fluid gallery">
       <div class="container-fluid gallery">
         <div class="row section-header">
-          <h2 class="mt-2 text-center">MAN MAILLOTS</h2>
+          <h2 class="mt-2 text-center">MAN JERSEYS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -360,7 +395,7 @@
           </div>
         </div>
         <div class="row">
-          <h2 class="mt-2 text-center">MAN CULOTES</h2>
+          <h2 class="mt-2 text-center">MAN BIBS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -448,13 +483,16 @@
       </div>
     </div>
     <!--WOMAN-->
-    <div class="mt-10 containe-fluid" id="woman">
-      <img class="img-fluid" src="images/bannerWoman.avif" alt="" />
+    <div id="woman" class="mt-5 bg-image img-fluid position-relative">
+      <img src="images/bannerWoman.avif" class="w-100" />
+      <div class="position-absolute bottom-50 text-light section-title">
+        <h2 class="p-2 m-0">WOMAN</h2>
+      </div>
     </div>
     <div class="container-fluid gallery">
       <div class="container-fluid gallery">
         <div class="row section-header">
-          <h2 class="mt-2 text-center">WOMAN MAILLOTS</h2>
+          <h2 class="mt-2 text-center">WOMAN JERSEYS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -534,7 +572,7 @@
           </div>
         </div>
         <div class="row">
-          <h2 class="mt-2 text-center">WOMAN CULOTES</h2>
+          <h2 class="mt-2 text-center">WOMAN BIBS</h2>
         </div>
         <div class="row">
           <div class="p-1 col-sm-6 col-md-2 card text-center">
@@ -631,8 +669,11 @@
       </div>
     </div>
     <!--ACCESSORIES-->
-    <div class="mt-10 containe-fluid" id="accessories">
-      <img class="img-fluid" src="images/bannerAcc.avif" alt="" />
+    <div id="accessories" class="mt-5 bg-image img-fluid position-relative">
+      <img src="images/bannerAcc.avif" class="w-100" />
+      <div class="position-absolute bottom-50 text-light section-title">
+        <h2 class="p-2 m-0">ACCESSORIES</h2>
+      </div>
     </div>
     <div class="container-fluid gallery">
       <div class="container-fluid gallery">
