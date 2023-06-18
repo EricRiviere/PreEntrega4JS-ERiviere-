@@ -429,7 +429,7 @@ function renderCart() {
       <a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1" href="#" onclick="removeProduct(${productIndex})"><i class="bi bi-dash-lg"></i></a><a class="mt-1 mx-1 btn border-1 py-1" href="#">${product.amount}</a><a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1" onclick="plusProductsCart(${productIndex})" href="#"><i class="bi bi-plus-lg"></i></a>
     </div>
     <div class="col">
-      <img src="/${product.productImage}" class="img-fluid cart-img">
+      <img src="${product.productImage}" class="img-fluid cart-img">
     </div>
   </div>
 </li>
