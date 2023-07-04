@@ -38,36 +38,40 @@
     />
   </head>
   <body>
+    <div id="scrollUp">
+      <button class="btn btn-light px-1 border border-black">
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-arrow-up-square-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"
+            />
+          </svg>
+        </a>
+      </button>
+    </div>
     <div class="container-fluid navbar fixed-top">
-      <a class="m-2 position-absolute top-1 start-0" href="#push"
+      <a class="m-2 position-absolute top-1 start-0" href="index.html"
         ><img
           src="https://maap.cc/_next/static/media/brandLogo.6f652e57.svg"
           alt="brand logo"
       /></a>
-      <ul
-        class="nav nav-tabs position-absolute top-50 start-50 translate-middle"
-      >
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link link-secondary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            href="#"
-            role="button"
-            aria-expanded="false"
-            >CATEGORIES</a
-          >
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#push">New Season</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#man">Man</a></li>
-            <li><a class="dropdown-item" href="#woman">Woman</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#accessories">Accessories</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div class="position-absolute top-50 start-50 translate-middle-y">
+        <input
+          type="search"
+          id="searchInput"
+          value=""
+          placeholder="Search"
+          class="form-control me-2 w-50"
+          aria-label="Search"
+        />
+      </div>
       <button
         class="m-4 btn btn-dark position-absolute top-1 end-0"
         type="button"
@@ -76,9 +80,8 @@
         aria-controls="offcanvasExample"
       >
         <i class="bi bi-cart3"></i>
-        <span class="numberOfProductsInCart"></span>
+        <span id="productsOnCart" class="badge text-bg-light"></span>
       </button>
-
       <div
         class="offcanvas offcanvas-end"
         tabindex="-1"
@@ -95,751 +98,128 @@
           ></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="cart list-group">
-            <!-- JS CONTENT -->
-          </ul>
-          <div class="d-flex justify-content-between mb-4">
-            <h5 class="total text-secondary pt-2">
-              Total <span id="total"></span> AUD $
-            </h5>
+          <div id="cart">
+            <ul class="cart list-group">
+              <!-- JS CONTENT -->
+            </ul>
           </div>
-          <div class="checkout">
-            <button onclick="printTicket()" class="btn btn-dark">
-              CHECKOUT
-            </button>
-            <button onclick="emptyCart()" type="button" class="btn btn-dark">
-              EMPTY CART
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--NEW SEASON-->
-    <div class="push" id="push"></div>
-    <div class="bg-image img-fluid position-relative">
-      <img src="images/bannerNS.avif" class="w-100" />
-      <div class="position-absolute bottom-50 text-light section-title">
-        <h1 class="p-2 m-0">MAAP NEW SESON</h1>
-      </div>
-    </div>
-    <div class="container-fluid gallery">
-      <div class="container-fluid gallery">
-        <div class="row">
-          <h2 class="mt-2 text-center">NEW SEASON JERSEYS</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS3.webp"
-              class="img-fluid card-img-top"
-              alt="evade pro base ls jersey brown"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeLsBrown)" class="btn btn-dark">
-                ADD TO CART
-              </button>
+          <div id="ticket">
+            <div class="d-flex justify-content-between mb-4">
+              <h5 class="total text-secondary pt-2">
+                Total: (<span id="cartTotal">0</span>) AUD $
+              </h5>
             </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS4.webp"
-              class="img-fluid card-img-top"
-              alt="evade pro base ls jersey purple"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeLsPurple)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS5.webp"
-              class="img-fluid card-img-top"
-              alt="evade pro base jersey 2.0 black"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeBlack)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS6.webp"
-              class="img-fluid card-img-top"
-              alt="woman evade pro base jersey 2.0 purple"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvadePurple)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS7.webp"
-              class="img-fluid card-img-top"
-              alt="woman evade pro base jersey 2.0 blue"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvadeBlue)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS8.webp"
-              class="img-fluid card-img-top"
-              alt="evade pro base jersey 2.0 white"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeWhite)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <h2 class="mt-2 text-center">NEW SEASON BIBS & JACKETS</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS9.webp"
-              class="img-fluid card-img-top"
-              alt="woman team bib evo purple"
-            />
-            <div class="card-body">
+            <div class="checkout">
               <button
-                onclick="addProduct(wTeamBibEvoPurple)"
                 class="btn btn-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                id="checkoutBtn"
               >
-                ADD TO CART
+                CHECKOUT
               </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS10.webp"
-              class="img-fluid card-img-top"
-              alt="woman team bib evo brown"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wTeamBibEvoBrown)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS11.webp"
-              class="img-fluid card-img-top"
-              alt="team bib evo purple"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(teamBibEvoDeepPurple)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS12.webp"
-              class="img-fluid card-img-top"
-              alt="team bib evo pink"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(teamBibEvoPurple)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS15.webp"
-              class="img-fluid card-img-top"
-              alt="draft team jacket brown"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(draftTeamJacketBrown)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-NS/NS16.webp"
-              class="img-fluid card-img-top"
-              alt="draft team jacket purple"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wDraftTeamJacketPurple)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
+              <button type="button" class="btn btn-dark" id="emptyCartBtn">
+                EMPTY CART
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--MAN-->
-    <div id="man" class="mt-5 bg-image img-fluid position-relative">
-      <img src="images/bannerMan.webp" class="w-100" />
-      <div class="position-absolute bottom-50 text-light section-title">
-        <h2 class="p-2 m-0">MAN</h2>
+    <div class="container-fluid mt-10 mb-3">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a
+            class="nav-link link-secondary"
+            aria-current="page"
+            href="#"
+            id="newCategory"
+            >New</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link link-secondary"
+            aria-current="page"
+            href="#"
+            id="manCategory"
+            >Man</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link link-secondary"
+            aria-current="page"
+            href="#"
+            id="womanCategory"
+            >Woman</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary" href="#" id="accCategory">Acc</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid" id="bannerTop">
+      <div class="bg-image img-fluid position-relative">
+        <img src="images/bannerNS.avif" class="w-100" />
+        <div class="position-absolute bottom-50 text-light section-title">
+          <h1 class="p-2 m-0">MAAP NEW SESON</h1>
+        </div>
       </div>
     </div>
-    <div class="container-fluid gallery">
-      <div class="container-fluid gallery">
-        <div class="row">
-          <h2 class="mt-2 text-center">MAN JERSEYS</h2>
+    <!-- Products -->
+    <main>
+      <div class="container-fluid">
+        <div id="products" class="text-center gallery">
+          <!-- JS loaded products -->
         </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man1.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey white"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evolveWhite)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man2.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey black"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evolveGray)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man3.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey green"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evolveGreen)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man4.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey 2.0 black"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeBlack)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man5.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey 2.0 gray"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeGray)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/maillot-man6.webp"
-              class="img-fluid card-img-top"
-              alt="evolve 3d pro air jersey 2.0 green"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(evadeGreen)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <h2 class="mt-2 text-center">MAN BIBS</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man1.webp"
-              class="img-fluid card-img-top"
-              alt="training bib 3.0 black"
-            />
-            <div class="card-body">
+      </div>
+    </main>
+    <div id="ticketModal">
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Ticket</h1>
               <button
-                onclick="addProduct(trainingBibBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
+                type="button"
+                class="btn-close closeTicket"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man2.webp"
-              class="img-fluid card-img-top"
-              alt="elipse team bib evo black"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(elipseBibBlack)" class="btn btn-dark">
-                ADD TO CART
-              </button>
+            <div class="modal-body">
+              <ul class="list-unstyled list-group" id="modalList"></ul>
             </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man3.webp"
-              class="img-fluid card-img-top"
-              alt="training bib 3.0 brown"
-            />
-            <div class="card-body">
+            <div class="modal-footer d-flex justify-content-between">
+              <div id="resume"></div>
               <button
-                onclick="addProduct(trainingBibBrown)"
-                class="btn btn-dark"
+                type="button"
+                class="btn btn-secondary closeTicket"
+                data-bs-dismiss="modal"
               >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man4.webp"
-              class="img-fluid card-img-top"
-              alt="training bib 3.0 green"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(trainingBibGreen)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man5.webp"
-              class="img-fluid card-img-top"
-              alt="elipse team bib evo red"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(elipseBibRed)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-man/culotte-man6.webp"
-              class="img-fluid card-img-top"
-              alt="team bib evo brown"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(teamBibBrown)" class="btn btn-dark">
-                ADD TO CART
+                Close
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--WOMAN-->
-    <div id="woman" class="mt-5 bg-image img-fluid position-relative">
-      <img src="images/bannerWoman.avif" class="w-100" />
-      <div class="position-absolute bottom-50 text-light section-title">
-        <h2 class="p-2 m-0">WOMAN</h2>
-      </div>
-    </div>
-    <div class="container-fluid gallery">
-      <div class="container-fluid gallery">
-        <div class="row">
-          <h2 class="mt-2 text-center">WOMAN JERSEYS</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman1.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve 3d pro air white"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvolveWhite)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman2.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve 3d pro air green"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvolveGreen)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman3.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve pro base jersey 2.0 purple"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvadePurple)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman4.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve pro base jersey 2.0 light green"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wEvadeLightGreen)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman5.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve 3d pro air pink"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvolvePink)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/maillot-woman6.webp"
-              class="img-fluid card-img-top"
-              alt="woman evolve pro base jersey 2.0 blue"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(wEvadeBlue)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <h2 class="mt-2 text-center">WOMAN BIBS</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman1.webp"
-              class="img-fluid card-img-top"
-              alt="woman team bib evo light gray"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(teamBibEvoLightGray)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman2.webp"
-              class="img-fluid card-img-top"
-              alt="woman training bib 3.0 black"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wtrainingBibBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman3.webp"
-              class="img-fluid card-img-top"
-              alt="woman training bib 3.0 green"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wtrainingBibGreen)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman4.webp"
-              class="img-fluid card-img-top"
-              alt="woman altroad cargo purple"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wAltRoadCargoPurple)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman5.webp"
-              class="img-fluid card-img-top"
-              alt="woman altroad cargo brown"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wAltRoadCargoBrown)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-woman/culotte-woman6.webp"
-              class="img-fluid card-img-top"
-              alt="woman training bib 3.0 brown"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(wtrainingBibBrown)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--ACCESSORIES-->
-    <div id="accessories" class="mt-5 bg-image img-fluid position-relative">
-      <img src="images/bannerAcc.avif" class="w-100" />
-      <div class="position-absolute bottom-50 text-light section-title">
-        <h2 class="p-2 m-0">ACCESSORIES</h2>
-      </div>
-    </div>
-    <div class="container-fluid gallery">
-      <div class="container-fluid gallery">
-        <div class="row">
-          <h2 class="mt-2 text-center">ACCESSORIES</h2>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc1.webp"
-              class="img-fluid card-img-top"
-              alt="hypercraft red"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(maapX100Red)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc2.webp"
-              class="img-fluid card-img-top"
-              alt="hypercraft green"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(maapX100Green)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc3.webp"
-              class="img-fluid card-img-top"
-              alt="pro race mitt red"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(proRaceMittGreen)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc4.webp"
-              class="img-fluid card-img-top"
-              alt="leg warmers black"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(legWarmersBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc5.webp"
-              class="img-fluid card-img-top"
-              alt="leg warmers blue"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(legWarmersBlue)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc6.webp"
-              class="img-fluid card-img-top"
-              alt="knee warmers black"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(kneeWarmersBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc7.webp"
-              class="img-fluid card-img-top"
-              alt="arm warmers blue"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(armWarmersBlue)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc8.webp"
-              class="img-fluid card-img-top"
-              alt="evade bottle black"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(evadeBottleBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc9.webp"
-              class="img-fluid card-img-top"
-              alt="evade bottle white"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(evadeBottleWhite)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc10.webp"
-              class="img-fluid card-img-top"
-              alt="ADL 2023 sock"
-            />
-            <div class="card-body">
-              <button onclick="addProduct(ADL2023Socks)" class="btn btn-dark">
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc11.webp"
-              class="img-fluid card-img-top"
-              alt="emerge pro air sock green"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(emergeProAirSockGreen)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-          <div class="p-1 col-sm-6 col-md-2 card text-center">
-            <img
-              src="images/img-acc/acc12.webp"
-              class="img-fluid card-img-top"
-              alt="emerge pro air sock black"
-            />
-            <div class="card-body">
-              <button
-                onclick="addProduct(emergeProAirSockBlack)"
-                class="btn btn-dark"
-              >
-                ADD TO CART
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="iframe-container" id="iframe">
+      <iframe
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/d_1jRbRW0jM"
+        loading="lazy"
+      ></iframe>
     </div>
     <footer>
       <div class="container-fluid footer-top text-center">
@@ -849,7 +229,7 @@
           data-aos-anchor-placement="top-bottom"
         >
           <div class="col-sm-4">
-            <a href="#push">
+            <a href="index.html">
               <img
                 src="https://maap.cc/_next/static/media/brandLogo.6f652e57.svg"
                 alt="brand logo"
