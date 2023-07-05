@@ -411,6 +411,16 @@ class Cart {
     }
     localStorage.setItem("cart", JSON.stringify(this.cart));
     this.list();
+    Toastify({
+      text: `${product.name} added to cart`,
+      duration: 1000,
+      className: "info",
+      gravity: "bottom",
+      position: "center",
+      style: {
+        background: "black",
+      },
+    }).showToast();
   }
 
   remove(id) {
@@ -447,7 +457,7 @@ class Cart {
           <div class="mt-2">${product.name}</div>
           <div class="mt-2">Price: ${product.price} AUD $</div>
           <div class="mt-2">Color: ${product.color}</div>
-          <a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1 removeBtn" href="#" data-id="${product.id}"><i class="bi bi-dash-lg"></i></a><a class="mt-1 mx-1 btn border-1 py-1" href="#">${product.amount}</a><a class="mt-1 mx-1 btn btn-sm btn-outline-secondary border-1 py-1 addBtn" href="#" data-id="${product.id}"><i class="bi bi-plus-lg"></i></a>
+          <a class="mt-1 mx-1 btn btn-sm btn-outline-dark border-1 py-1 removeBtn" href="#" data-id="${product.id}"><i class="bi bi-dash-lg"></i></a><a class="mt-1 mx-1 btn border-1 py-1" href="#">${product.amount}</a><a class="mt-1 mx-1 btn btn-sm btn-outline-dark border-1 py-1 addBtn" href="#" data-id="${product.id}"><i class="bi bi-plus-lg"></i></a>
         </div>
         <div class="col">
           <img src="${product.image}" class="img-fluid cart-img">

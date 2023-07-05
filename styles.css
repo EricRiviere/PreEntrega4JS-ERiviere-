@@ -84,6 +84,12 @@ footer i {
   z-index: 1;
 }
 
+/*TOAST*/
+
+.info {
+  border-radius: 10px;
+}
+
 /*FOOTER*/
 
 .footer-top {
