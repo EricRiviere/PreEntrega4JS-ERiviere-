@@ -413,7 +413,7 @@ class Cart {
     this.list();
     Toastify({
       text: `${product.name} added to cart`,
-      duration: 1000,
+      duration: 2000,
       className: "info",
       gravity: "bottom",
       position: "center",
@@ -425,10 +425,21 @@ class Cart {
 
   remove(id) {
     const index = this.cart.findIndex((product) => product.id === id);
+    const productName = this.cart[index].name;
     if (this.cart[index].amount > 1) {
       this.cart[index].amount--;
     } else {
       this.cart.splice(index, 1);
+      Toastify({
+        text: `${productName} removed from cart`,
+        duration: 2000,
+        className: "info",
+        gravity: "bottom",
+        position: "right",
+        style: {
+          background: "black",
+        },
+      }).showToast();
     }
     localStorage.setItem("cart", JSON.stringify(this.cart));
     this.list();
