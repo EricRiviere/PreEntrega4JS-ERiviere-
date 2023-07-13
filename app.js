@@ -553,7 +553,7 @@ class Cart {
       const modalIframe = document.querySelector("#modalIframe");
       modalIframe.classList.add("modal-iframe");
       modalIframe.innerHTML = `
-      <img class="mx-auto d-block" src="/media/rickroll.gif"/>
+      <img class="mx-auto d-block" src="./media/rickroll.gif"/>
       `;
       const modalText = document.querySelector("#modalText");
       modalText.innerText = "YOU'VE BEEN RICK ROLLED";
