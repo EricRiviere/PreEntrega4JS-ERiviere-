@@ -203,17 +203,17 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <p class="pt-2 px-4 text-center" id="modalText">
+              Click on CONFIRM to proceed with payment.
+            </p>
+            <div class="modal-body" id="modalBody">
               <ul class="list-unstyled list-group" id="modalList"></ul>
+              <div id="modalIframe"></div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
               <div id="resume"></div>
-              <button
-                type="button"
-                class="btn btn-dark closeTicket"
-                data-bs-dismiss="modal"
-              >
-                Close
+              <button type="button" class="btn btn-dark confirmTicket">
+                Confirm
               </button>
             </div>
           </div>

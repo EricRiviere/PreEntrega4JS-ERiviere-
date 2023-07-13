@@ -75,6 +75,11 @@ footer i {
   height: 100%;
 }
 
+.modal-iframe {
+  height: 50vh;
+  width: auto;
+}
+
 /*SCROLL UP*/
 
 #scrollUp {

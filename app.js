@@ -3,374 +3,384 @@ class DataBase {
   constructor() {
     this.proucts = [];
     //Uploading all products available
-    this.addRegister(
-      1,
-      "Evolve 3D Pro Air Jersey",
-      225,
-      "White",
-      "images/img-man/maillot-man1.webp",
-      "men"
-    );
-    this.addRegister(
-      2,
-      "Evolve 3D Pro Air Jersey",
-      225,
-      "Gray",
-      "images/img-man/maillot-man2.webp",
-      "men"
-    );
-    this.addRegister(
-      3,
-      "Evolve 3D Pro Air Jersey",
-      225,
-      "Green",
-      "images/img-man/maillot-man3.webp",
-      "men"
-    );
-    this.addRegister(
-      4,
-      "Evade Pro Base Jersey 2.0",
-      245,
-      "Black",
-      "images/img-man/maillot-man4.webp",
-      "men"
-    );
-    this.addRegister(
-      5,
-      "Evade Pro Base Jersey 2.0",
-      245,
-      "Gray",
-      "images/img-man/maillot-man5.webp",
-      "men"
-    );
-    this.addRegister(
-      6,
-      "Evade Pro Base Jersey 2.0",
-      245,
-      "Green",
-      "images/img-man/maillot-man6.webp",
-      "men"
-    );
-    this.addRegister(
-      7,
-      "Training Bib 3.0",
-      295,
-      "Black",
-      "images/img-man/culotte-man1.webp",
-      "men"
-    );
-    this.addRegister(
-      8,
-      "Elipse Team Bib Evo",
-      375,
-      "Black",
-      "images/img-man/culotte-man2.webp",
-      "men"
-    );
-    this.addRegister(
-      9,
-      "Training Bib 3.0",
-      295,
-      "Brown",
-      "images/img-man/culotte-man3.webp",
-      "men"
-    );
-    this.addRegister(
-      10,
-      "Training Bib 3.0",
-      295,
-      "Green",
-      "images/img-man/culotte-man4.webp",
-      "men"
-    );
-    this.addRegister(
-      11,
-      "Elipse Team Bib Evo",
-      375,
-      "Red",
-      "images/img-man/culotte-man5.webp",
-      "men"
-    );
-    this.addRegister(
-      12,
-      "Team Bib Evo",
-      355,
-      "Brown",
-      "images/img-man/culotte-man6.webp",
-      "men"
-    );
-    this.addRegister(
-      13,
-      "Evade Pro Base LS Jersey 2.0",
-      275,
-      "Brown",
-      "images/img-NS/NS3.webp",
-      "new men"
-    );
-    this.addRegister(
-      14,
-      "Evade Pro Base LS Jersey 2.0",
-      275,
-      "Purple",
-      "images/img-NS/NS4.webp",
-      "new men"
-    );
-    this.addRegister(
-      15,
-      "Women's Evade Pro Base Jersey 2.0",
-      245,
-      "Purple",
-      "images/img-NS/NS6.webp",
-      "new woman"
-    );
-    this.addRegister(
-      16,
-      "Women's Evade Pro Base Jersey 2.0",
-      245,
-      "Blue",
-      "images/img-NS/NS7.webp",
-      "new woman"
-    );
-    this.addRegister(
-      17,
-      "Evade Pro Base Jersey 2.0",
-      245,
-      "White",
-      "images/img-NS/NS8.webp",
-      "new man"
-    );
-    this.addRegister(
-      18,
-      "Women's Team Bib Evo",
-      355,
-      "Purple",
-      "images/img-NS/NS9.webp",
-      "new woman"
-    );
-    this.addRegister(
-      19,
-      "Women's Team Bib Evo",
-      355,
-      "Brown",
-      "images/img-NS/NS10.webp",
-      "new woman"
-    );
-    this.addRegister(
-      20,
-      "Team Bib Evo",
-      355,
-      "Deep Purple",
-      "images/img-NS/NS11.webp",
-      "new man"
-    );
-    this.addRegister(
-      21,
-      "Women's Team Bib Evo",
-      355,
-      "Purple",
-      "images/img-NS/NS9.webp",
-      "new woman"
-    );
-    this.addRegister(
-      22,
-      "Draft Team Jacket",
-      215,
-      "Brown",
-      "images/img-NS/NS15.webp",
-      "new man"
-    );
-    this.addRegister(
-      23,
-      "Women's Draft Team Jacket",
-      215,
-      "Purple",
-      "images/img-NS/NS16.webp",
-      "new woman"
-    );
-    this.addRegister(
-      24,
-      "Women's Evolve 3D Pro Air",
-      225,
-      "White",
-      "images/img-woman/maillot-woman1.webp",
-      "woman"
-    );
-    this.addRegister(
-      25,
-      "Women's Evolve 3D Pro Air",
-      225,
-      "Green",
-      "images/img-woman/maillot-woman2.webp",
-      "woman"
-    );
-    this.addRegister(
-      26,
-      "Women's Evade Pro Base Jersey 2.0",
-      245,
-      "Light Green",
-      "images/img-woman/maillot-woman4.webp",
-      "woman"
-    );
-    this.addRegister(
-      27,
-      "Women's Evolve 3D Pro Air",
-      225,
-      "Pink",
-      "images/img-woman/maillot-woman5.webp",
-      "woman"
-    );
-    this.addRegister(
-      28,
-      "Team Bib Evo",
-      355,
-      "Light Gray",
-      "images/img-woman/culotte-woman1.webp",
-      "woman"
-    );
-    this.addRegister(
-      29,
-      "Women's Training Bib 3.0",
-      295,
-      "Black",
-      "images/img-woman/culotte-woman2.webp",
-      "woman"
-    );
-    this.addRegister(
-      30,
-      "Women's Training Bib 3.0",
-      295,
-      "Green",
-      "images/img-woman/culotte-woman3.webp",
-      "woman"
-    );
-    this.addRegister(
-      31,
-      "Women's Alt_Road Cargo",
-      415,
-      "Purple",
-      "images/img-woman/culotte-woman4.webp",
-      "woman"
-    );
-    this.addRegister(
-      32,
-      "Women's Alt_Road Cargo",
-      415,
-      "Brown",
-      "images/img-woman/culotte-woman5.webp",
-      "woman"
-    );
-    this.addRegister(
-      33,
-      "Women's Training Bib 3.0",
-      295,
-      "Brown",
-      "images/img-woman/culotte-woman6.webp",
-      "woman"
-    );
-    this.addRegister(
-      34,
-      "MAAP x 100% Hypercraft",
-      305,
-      "Red",
-      "images/img-acc/acc1.webp",
-      "acc"
-    );
-    this.addRegister(
-      35,
-      "MAAP x 100% Hypercraft",
-      305,
-      "Green",
-      "images/img-acc/acc2.webp",
-      "acc"
-    );
-    this.addRegister(
-      36,
-      "Pro Race Mitt",
-      115,
-      "Green",
-      "images/img-acc/acc3.webp",
-      "acc"
-    );
-    this.addRegister(
-      37,
-      "Leg Warmers",
-      95,
-      "Black",
-      "images/img-acc/acc4.webp",
-      "acc"
-    );
-    this.addRegister(
-      38,
-      "Leg Warmers",
-      95,
-      "Blue",
-      "images/img-acc/acc5.webp",
-      "acc"
-    );
-    this.addRegister(
-      39,
-      "Knee Warmers",
-      80,
-      "Black",
-      "images/img-acc/acc6.webp",
-      "acc"
-    );
-    this.addRegister(
-      40,
-      "Arm Warmers",
-      75,
-      "Blue",
-      "images/img-acc/acc7.webp",
-      "acc"
-    );
-    this.addRegister(
-      41,
-      "Evade Bottle",
-      30,
-      "Black",
-      "images/img-acc/acc8.webp",
-      "acc"
-    );
-    this.addRegister(
-      42,
-      "Evade Bottle",
-      30,
-      "White",
-      "images/img-acc/acc9.webp",
-      "acc"
-    );
-    this.addRegister(
-      43,
-      "ADL 2023 Sock",
-      35,
-      "Black",
-      "images/img-acc/acc10.webp",
-      "acc"
-    );
-    this.addRegister(
-      44,
-      "Emerge Pro Air Sock",
-      30,
-      "Green",
-      "images/img-acc/acc11.webp",
-      "acc"
-    );
-    this.addRegister(
-      45,
-      "Emerge Pro Air Sock",
-      30,
-      "Black",
-      "images/img-acc/acc12.webp",
-      "acc"
-    );
+    //Since we are now using local JSON document to load the products we no longer nees the products here
+    //this.addRegister(
+    //  1,
+    //  "Evolve 3D Pro Air Jersey",
+    //  225,
+    //  "White",
+    //  "images/img-man/maillot-man1.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  2,
+    //  "Evolve 3D Pro Air Jersey",
+    //  225,
+    //  "Gray",
+    //  "images/img-man/maillot-man2.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  3,
+    //  "Evolve 3D Pro Air Jersey",
+    //  225,
+    //  "Green",
+    //  "images/img-man/maillot-man3.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  4,
+    //  "Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Black",
+    //  "images/img-man/maillot-man4.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  5,
+    //  "Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Gray",
+    //  "images/img-man/maillot-man5.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  6,
+    //  "Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Green",
+    //  "images/img-man/maillot-man6.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  7,
+    //  "Training Bib 3.0",
+    //  295,
+    //  "Black",
+    //  "images/img-man/culotte-man1.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  8,
+    //  "Elipse Team Bib Evo",
+    //  375,
+    //  "Black",
+    //  "images/img-man/culotte-man2.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  9,
+    //  "Training Bib 3.0",
+    //  295,
+    //  "Brown",
+    //  "images/img-man/culotte-man3.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  10,
+    //  "Training Bib 3.0",
+    //  295,
+    //  "Green",
+    //  "images/img-man/culotte-man4.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  11,
+    //  "Elipse Team Bib Evo",
+    //  375,
+    //  "Red",
+    //  "images/img-man/culotte-man5.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  12,
+    //  "Team Bib Evo",
+    //  355,
+    //  "Brown",
+    //  "images/img-man/culotte-man6.webp",
+    //  "men"
+    //);
+    //this.addRegister(
+    //  13,
+    //  "Evade Pro Base LS Jersey 2.0",
+    //  275,
+    //  "Brown",
+    //  "images/img-NS/NS3.webp",
+    //  "new men"
+    //);
+    //this.addRegister(
+    //  14,
+    //  "Evade Pro Base LS Jersey 2.0",
+    //  275,
+    //  "Purple",
+    //  "images/img-NS/NS4.webp",
+    //  "new men"
+    //);
+    //this.addRegister(
+    //  15,
+    //  "Women's Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Purple",
+    //  "images/img-NS/NS6.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  16,
+    //  "Women's Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Blue",
+    //  "images/img-NS/NS7.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  17,
+    //  "Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "White",
+    //  "images/img-NS/NS8.webp",
+    //  "new man"
+    //);
+    //this.addRegister(
+    //  18,
+    //  "Women's Team Bib Evo",
+    //  355,
+    //  "Purple",
+    //  "images/img-NS/NS9.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  19,
+    //  "Women's Team Bib Evo",
+    //  355,
+    //  "Brown",
+    //  "images/img-NS/NS10.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  20,
+    //  "Team Bib Evo",
+    //  355,
+    //  "Deep Purple",
+    //  "images/img-NS/NS11.webp",
+    //  "new man"
+    //);
+    //this.addRegister(
+    //  21,
+    //  "Women's Team Bib Evo",
+    //  355,
+    //  "Purple",
+    //  "images/img-NS/NS9.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  22,
+    //  "Draft Team Jacket",
+    //  215,
+    //  "Brown",
+    //  "images/img-NS/NS15.webp",
+    //  "new man"
+    //);
+    //this.addRegister(
+    //  23,
+    //  "Women's Draft Team Jacket",
+    //  215,
+    //  "Purple",
+    //  "images/img-NS/NS16.webp",
+    //  "new woman"
+    //);
+    //this.addRegister(
+    //  24,
+    //  "Women's Evolve 3D Pro Air",
+    //  225,
+    //  "White",
+    //  "images/img-woman/maillot-woman1.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  25,
+    //  "Women's Evolve 3D Pro Air",
+    //  225,
+    //  "Green",
+    //  "images/img-woman/maillot-woman2.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  26,
+    //  "Women's Evade Pro Base Jersey 2.0",
+    //  245,
+    //  "Light Green",
+    //  "images/img-woman/maillot-woman4.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  27,
+    //  "Women's Evolve 3D Pro Air",
+    //  225,
+    //  "Pink",
+    //  "images/img-woman/maillot-woman5.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  28,
+    //  "Team Bib Evo",
+    //  355,
+    //  "Light Gray",
+    //  "images/img-woman/culotte-woman1.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  29,
+    //  "Women's Training Bib 3.0",
+    //  295,
+    //  "Black",
+    //  "images/img-woman/culotte-woman2.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  30,
+    //  "Women's Training Bib 3.0",
+    //  295,
+    //  "Green",
+    //  "images/img-woman/culotte-woman3.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  31,
+    //  "Women's Alt_Road Cargo",
+    //  415,
+    //  "Purple",
+    //  "images/img-woman/culotte-woman4.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  32,
+    //  "Women's Alt_Road Cargo",
+    //  415,
+    //  "Brown",
+    //  "images/img-woman/culotte-woman5.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  33,
+    //  "Women's Training Bib 3.0",
+    //  295,
+    //  "Brown",
+    //  "images/img-woman/culotte-woman6.webp",
+    //  "woman"
+    //);
+    //this.addRegister(
+    //  34,
+    //  "MAAP x 100% Hypercraft",
+    //  305,
+    //  "Red",
+    //  "images/img-acc/acc1.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  35,
+    //  "MAAP x 100% Hypercraft",
+    //  305,
+    //  "Green",
+    //  "images/img-acc/acc2.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  36,
+    //  "Pro Race Mitt",
+    //  115,
+    //  "Green",
+    //  "images/img-acc/acc3.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  37,
+    //  "Leg Warmers",
+    //  95,
+    //  "Black",
+    //  "images/img-acc/acc4.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  38,
+    //  "Leg Warmers",
+    //  95,
+    //  "Blue",
+    //  "images/img-acc/acc5.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  39,
+    //  "Knee Warmers",
+    //  80,
+    //  "Black",
+    //  "images/img-acc/acc6.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  40,
+    //  "Arm Warmers",
+    //  75,
+    //  "Blue",
+    //  "images/img-acc/acc7.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  41,
+    //  "Evade Bottle",
+    //  30,
+    //  "Black",
+    //  "images/img-acc/acc8.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  42,
+    //  "Evade Bottle",
+    //  30,
+    //  "White",
+    //  "images/img-acc/acc9.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  43,
+    //  "ADL 2023 Sock",
+    //  35,
+    //  "Black",
+    //  "images/img-acc/acc10.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  44,
+    //  "Emerge Pro Air Sock",
+    //  30,
+    //  "Green",
+    //  "images/img-acc/acc11.webp",
+    //  "acc"
+    //);
+    //this.addRegister(
+    //  45,
+    //  "Emerge Pro Air Sock",
+    //  30,
+    //  "Black",
+    //  "images/img-acc/acc12.webp",
+    //  "acc"
+    //);
   }
 
-  addRegister(id, name, price, color, image, category) {
-    const product = new Product(id, name, price, color, image, category);
-    this.proucts.push(product);
-  }
+  //Since we are working with local JSON document we no longer need this method
+  //addRegister(id, name, price, color, image, category) {
+  //  const product = new Product(id, name, price, color, image, category);
+  //  this.proucts.push(product);
+  //}
 
-  bringRegisters() {
+  //Old bringRegisters method
+  //bringRegisters() {
+  //  return this.proucts;
+  //}
+
+  //Async bring registers locally method
+  async bringRegisters() {
+    const response = await fetch("/products.json");
+    this.proucts = await response.json();
     return this.proucts;
   }
 
@@ -531,11 +541,30 @@ class Cart {
     }
     const ticketResume = document.querySelector("#resume");
     ticketResume.innerHTML = `<div>Total: ${this.total} AUD $ (${currentDate})</div>`;
-    const closeButtons = document.querySelectorAll(".closeTicket");
-    closeButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        modalList.innerHTML = "";
+    const closeTicket = document.querySelector(".closeTicket");
+    closeTicket.addEventListener("click", () => {
+      modalList.innerHTML = "";
+    });
+
+    const confirmTicket = document.querySelector(".confirmTicket");
+    confirmTicket.addEventListener("click", () => {
+      ticketResume.innerHTML = "";
+      modalList.innerHTML = "";
+      const modalIframe = document.querySelector("#modalIframe");
+      modalIframe.classList.add("modal-iframe");
+      modalIframe.innerHTML = `
+      <video width="400" autoplay class="responsive-iframe">
+        <source src="/media/video.mp4" type="video/mp4">
+      </video>
+      `;
+      const modalText = document.querySelector("#modalText");
+      modalText.innerText = "YOU'VE BEEN RICK ROLLED";
+      confirmTicket.innerText = "END THIS PLEASE";
+      confirmTicket.addEventListener("click", () => {
+        modalIframe.innerHTML = "";
+        location.reload();
       });
+      this.emptyCart();
     });
   }
 }
@@ -554,6 +583,9 @@ class Product {
 
 //DB inicialization
 const DB = new DataBase();
+
+//We use this console.log to extract registers on DB on JSON format to apply fetch locally.
+//console.log(JSON.stringify(DB.bringRegisters()));
 
 //Elements
 const productsDiv = document.querySelector("#products");
@@ -576,8 +608,11 @@ checkoutBtn.addEventListener("click", () => {
   cart.printTicket();
 });
 
-//Call to load products
-loadProducts(DB.bringRegisters());
+//Old call to load products
+//loadProducts(DB.bringRegisters());
+
+//Call to new bringRegisters async method
+DB.bringRegisters().then((products) => loadProducts(products));
 
 //Prints the DB registers on the HTML
 function loadProducts(products) {
