@@ -553,7 +553,7 @@ class Cart {
       const modalIframe = document.querySelector("#modalIframe");
       modalIframe.classList.add("modal-iframe");
       modalIframe.innerHTML = `
-      <img src="media/rickroll.gif"/>
+      <img class="mx-auto d-block" src="media/rickroll.gif"/>
       `;
       const modalText = document.querySelector("#modalText");
       modalText.innerText = "YOU'VE BEEN RICK ROLLED";
@@ -751,3 +751,16 @@ scrollUpButton.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+//TEST WEATHER
+
+let weather = {
+  apiKey: "4f8f206d6a7ee8151b6166de633716b5",
+  fetchWeather: function () {
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=barcelona&units=metric&appid=4f8f206d6a7ee8151b6166de633716b5"
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  },
+};
