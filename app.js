@@ -555,6 +555,7 @@ class Cart {
       modalIframe.innerHTML = `
       <video width="400" autoplay class="responsive-iframe">
         <source src="/media/video.mp4" type="video/mp4">
+        <source src="/media/video.ogg" type="video/ogg">
       </video>
       `;
       const modalText = document.querySelector("#modalText");
