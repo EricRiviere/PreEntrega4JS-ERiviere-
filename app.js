@@ -379,7 +379,7 @@ class DataBase {
 
   //Async bring registers locally method
   async bringRegisters() {
-    const response = await fetch("/products.json");
+    const response = await fetch("./products.json");
     this.proucts = await response.json();
     return this.proucts;
   }
