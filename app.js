@@ -796,6 +796,7 @@ let weather = {
     temperature.innerText = temp + " ºC";
     weatherHumidity.innerText = "Humidity: " + humidity + " %";
     windSpeed.innerText = "Wind Speed: " + speed + " km/h";
+    this.cityName = name;
 
     if (icon.includes("01") || icon.includes("02")) {
       this.result = "sunny";
@@ -844,25 +845,37 @@ let weather = {
     const ideasModalBody = document.querySelector("#ideasModalBody");
     ideasModalBody.innerHTML = "";
     for (const product of products) {
-      ideasModalBody.innerHTML += `
-        <ul class="cart list-group">
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col">
-                <div class="mt-2">PRODUCT:</div>
-                <div class="mt-2">${product.name}</div>
-                <div class="mt-2">Price: ${product.price} AUD $</div>
-                <div class="mt-2">Color: ${product.color}</div>
-              </div>
-              <div class="col">
-                <img src="${product.image}" class="img-fluid cart-img">
-              </div>
-              <div class="card-body">
+      const productItem = document.createElement("ul");
+      productItem.classList.add("cart", "list-group");
+      productItem.innerHTML = `
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <div class="mt-2">PRODUCT:</div>
+              <div class="mt-2">${product.name}</div>
+              <div class="mt-2">Price: ${product.price} AUD $</div>
+              <div class="mt-2">Color: ${product.color}</div>
             </div>
+            <div class="col">
+              <img src="${product.image}" class="img-fluid cart-img">
             </div>
-          </li>
-        </ul>
+          </div>
+        </li>
       `;
+
+      const addButton = document.createElement("button");
+      addButton.classList.add("btn", "btn-dark", "addToCartBtn");
+      addButton.dataset.id = product.id;
+      addButton.innerText = "ADD TO CART";
+      addButton.addEventListener("click", () => {
+        const selectedProduct = DB.registerById(product.id);
+        if (selectedProduct) {
+          cart.addToCart(selectedProduct);
+        }
+      });
+
+      productItem.querySelector(".col").appendChild(addButton);
+      ideasModalBody.appendChild(productItem);
     }
   },
 };
@@ -883,9 +896,9 @@ weatherProductsButton.addEventListener("click", () => {
   weather.productsByWeather();
   weatherProductsButton.remove();
   const modalFooterText = document.querySelector("#modalFooterText");
-  modalFooterText.innerText =
-    "This products are perfect for weather conditions in your city";
+  modalFooterText.innerText = `This products are perfect for weather conditions in ${weather.cityName}`;
   const modalFooterBtn1 = document.querySelector("#modalFooterBtn1");
+  modalFooterBtn1.innerText = "DELETE SELECTED CITY";
   modalFooterBtn1.addEventListener("click", () => {
     location.reload();
   });
