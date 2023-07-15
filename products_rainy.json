@@ -1,0 +1,18 @@
+[
+  {
+    "id": 22,
+    "name": "Draft Team Jacket",
+    "price": 215,
+    "color": "Brown",
+    "image": "images/img-NS/NS15.webp",
+    "category": "new man"
+  },
+  {
+    "id": 23,
+    "name": "Women's Draft Team Jacket",
+    "price": 215,
+    "color": "Purple",
+    "image": "images/img-NS/NS16.webp",
+    "category": "new woman"
+  }
+]

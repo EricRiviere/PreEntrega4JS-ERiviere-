@@ -553,7 +553,9 @@ class Cart {
       const modalIframe = document.querySelector("#modalIframe");
       modalIframe.classList.add("modal-iframe");
       modalIframe.innerHTML = `
-      <img class="mx-auto d-block" src="media/rickroll.gif"/>
+      <div class="text-center">
+      <img src="media/rickroll.gif"/>
+      </div>
       `;
       const modalText = document.querySelector("#modalText");
       modalText.innerText = "YOU'VE BEEN RICK ROLLED";
@@ -742,7 +744,7 @@ emptyCartButton.addEventListener("click", () => {
 const cart = new Cart();
 
 //Scroll Up
-const scrollUpButton = document.getElementById("scrollUpButton");
+const scrollUpButton = document.getElementById("scrollUp");
 
 scrollUpButton.addEventListener("click", () => {
   // Scroll smoothly to the top
@@ -752,15 +754,141 @@ scrollUpButton.addEventListener("click", () => {
   });
 });
 
-//TEST WEATHER
+//WEATHER APP
 
 let weather = {
   apiKey: "4f8f206d6a7ee8151b6166de633716b5",
-  fetchWeather: function () {
+  result: "",
+
+  fetchWeather: function (city) {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=barcelona&units=metric&appid=4f8f206d6a7ee8151b6166de633716b5"
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+        city +
+        "&units=metric&appid=" +
+        this.apiKey
     )
+      .then((response) => {
+        if (!response.ok) {
+          alert("No weather found.");
+          throw new Error("No weather found.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        this.displayWeather(data);
+      });
+  },
+
+  displayWeather: function (data) {
+    const { name } = data;
+    const { icon, description } = data.weather[0];
+    const { temp, humidity } = data.main;
+    const { speed } = data.wind;
+    const city = document.querySelector("#city");
+    const weatherIcon = document.querySelector("#icon");
+    const weatherDescription = document.querySelector("#description");
+    const temperature = document.querySelector("#temp");
+    const weatherHumidity = document.querySelector("#humidity");
+    const windSpeed = document.querySelector("#windSpeed");
+    city.innerText = "Weather in " + name;
+    weatherIcon.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+    weatherDescription.innerText = description;
+    temperature.innerText = temp + " ºC";
+    weatherHumidity.innerText = "Humidity: " + humidity + " %";
+    windSpeed.innerText = "Wind Speed: " + speed + " km/h";
+
+    if (icon.includes("01") || icon.includes("02")) {
+      this.result = "sunny";
+    } else if (icon.includes("03") || icon.includes("04")) {
+      this.result = "cloudy";
+    } else if (
+      icon.includes("09") ||
+      icon.includes("10") ||
+      icon.includes("11")
+    ) {
+      this.result = "rainy";
+    } else if (icon.includes("13") || icon.includes("50")) {
+      this.result = "cold";
+    } else {
+      this.result = "";
+    }
+  },
+
+  search: function () {
+    this.fetchWeather(document.querySelector("#searchCity").value);
+  },
+
+  productsByWeather: function () {
+    if (this.result === "sunny") {
+      this.fetchProducts("sunny");
+    } else if (this.result === "cloudy") {
+      this.fetchProducts("cloudy");
+    } else if (this.result === "rainy") {
+      this.fetchProducts("rainy");
+    } else if (this.result === "cold") {
+      this.fetchProducts("cold");
+    } else {
+      alert("No products available for the current weather.");
+    }
+  },
+
+  fetchProducts: function (weatherType) {
+    const productsURL = `./products_${weatherType}.json`;
+    fetch(productsURL)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((products) => this.displayProducts(products))
+      .catch((error) => console.error(error));
+  },
+
+  displayProducts: function (products) {
+    const ideasModalBody = document.querySelector("#ideasModalBody");
+    ideasModalBody.innerHTML = "";
+    for (const product of products) {
+      ideasModalBody.innerHTML += `
+        <ul class="cart list-group">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col">
+                <div class="mt-2">PRODUCT:</div>
+                <div class="mt-2">${product.name}</div>
+                <div class="mt-2">Price: ${product.price} AUD $</div>
+                <div class="mt-2">Color: ${product.color}</div>
+              </div>
+              <div class="col">
+                <img src="${product.image}" class="img-fluid cart-img">
+              </div>
+              <div class="card-body">
+            </div>
+            </div>
+          </li>
+        </ul>
+      `;
+    }
   },
 };
+
+const searchCityButton = document.querySelector("#searchCityButton");
+searchCityButton.addEventListener("click", () => {
+  weather.search();
+});
+
+document.querySelector("#searchCity").addEventListener("keyup", (event) => {
+  if (event.key == "Enter") {
+    weather.search();
+  }
+});
+
+const weatherProductsButton = document.querySelector("#weatherProductsButton");
+weatherProductsButton.addEventListener("click", () => {
+  weather.productsByWeather();
+  weatherProductsButton.remove();
+  const modalFooterText = document.querySelector("#modalFooterText");
+  modalFooterText.innerText =
+    "This products are perfect for weather conditions in your city";
+  const modalFooterBtn1 = document.querySelector("#modalFooterBtn1");
+  modalFooterBtn1.addEventListener("click", () => {
+    location.reload();
+  });
+});
+
+weather.fetchWeather("Barcelona");

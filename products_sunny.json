@@ -1,0 +1,34 @@
+[
+  {
+    "id": 34,
+    "name": "MAAP x 100% Hypercraft",
+    "price": 305,
+    "color": "Red",
+    "image": "images/img-acc/acc1.webp",
+    "category": "acc"
+  },
+  {
+    "id": 35,
+    "name": "MAAP x 100% Hypercraft",
+    "price": 305,
+    "color": "Green",
+    "image": "images/img-acc/acc2.webp",
+    "category": "acc"
+  },
+  {
+    "id": 41,
+    "name": "Evade Bottle",
+    "price": 30,
+    "color": "Black",
+    "image": "images/img-acc/acc8.webp",
+    "category": "acc"
+  },
+  {
+    "id": 42,
+    "name": "Evade Bottle",
+    "price": 30,
+    "color": "White",
+    "image": "images/img-acc/acc9.webp",
+    "category": "acc"
+  }
+]

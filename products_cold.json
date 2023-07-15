@@ -1,0 +1,66 @@
+[
+  {
+    "id": 13,
+    "name": "Evade Pro Base LS Jersey 2.0",
+    "price": 275,
+    "color": "Brown",
+    "image": "images/img-NS/NS3.webp",
+    "category": "new men"
+  },
+  {
+    "id": 14,
+    "name": "Evade Pro Base LS Jersey 2.0",
+    "price": 275,
+    "color": "Purple",
+    "image": "images/img-NS/NS4.webp",
+    "category": "new men"
+  },
+  {
+    "id": 22,
+    "name": "Draft Team Jacket",
+    "price": 215,
+    "color": "Brown",
+    "image": "images/img-NS/NS15.webp",
+    "category": "new man"
+  },
+  {
+    "id": 23,
+    "name": "Women's Draft Team Jacket",
+    "price": 215,
+    "color": "Purple",
+    "image": "images/img-NS/NS16.webp",
+    "category": "new woman"
+  },
+  {
+    "id": 37,
+    "name": "Leg Warmers",
+    "price": 95,
+    "color": "Black",
+    "image": "images/img-acc/acc4.webp",
+    "category": "acc"
+  },
+  {
+    "id": 38,
+    "name": "Leg Warmers",
+    "price": 95,
+    "color": "Blue",
+    "image": "images/img-acc/acc5.webp",
+    "category": "acc"
+  },
+  {
+    "id": 39,
+    "name": "Knee Warmers",
+    "price": 80,
+    "color": "Black",
+    "image": "images/img-acc/acc6.webp",
+    "category": "acc"
+  },
+  {
+    "id": 40,
+    "name": "Arm Warmers",
+    "price": 75,
+    "color": "Blue",
+    "image": "images/img-acc/acc7.webp",
+    "category": "acc"
+  }
+]

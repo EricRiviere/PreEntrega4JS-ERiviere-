@@ -84,7 +84,15 @@ footer i {
 
 #scrollUp {
   position: fixed;
-  bottom: 5vh;
+  bottom: 11vh;
+  right: 5vw;
+  z-index: 1;
+}
+
+/*SUGGESTIONS*/
+#ideasButton {
+  position: fixed;
+  bottom: 3vh;
   right: 5vw;
   z-index: 1;
 }

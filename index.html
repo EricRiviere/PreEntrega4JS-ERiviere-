@@ -62,6 +62,99 @@
         </a>
       </button>
     </div>
+    <div id="ideasButton">
+      <button
+        class="btn btn-light px-1 border border-black"
+        data-bs-toggle="modal"
+        data-bs-target="#ideasModal"
+      >
+        <a href="#" class="link-dark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-cloud-sun-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"
+            />
+            <path
+              d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"
+            />
+          </svg>
+        </a>
+      </button>
+    </div>
+    <div
+      class="modal fade"
+      id="ideasModal"
+      tabindex="-1"
+      aria-labelledby="ideasModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ideasModalLabel">
+              IT'S ALL ABOUT YOU
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center" id="ideasModalBody">
+            <p class="py-1">Introduce your city to check the weather:</p>
+            <form action="" id="formWeather" class="position-relative">
+              <input
+                type="search"
+                id="searchCity"
+                value=""
+                placeholder="Search"
+                class="form-control w-50 position-absolute top-0 start-30 my-3 mx-4"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-dark position-absolute top-0 end-30 my-3 mx-5"
+                id="searchCityButton"
+              >
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+            <h2 class="mt-10" id="city">Weather in Barcelona</h2>
+            <h3 class="my-3" id="temp">29ºC</h3>
+            <p class="text-start d-inline p-2" id="description">Claudy</p>
+            <img id="icon" src="" alt="" />
+            <p class="text-center mt-3 mb-0" id="humidity">Humidity: 60%</p>
+            <p class="text-center" id="windSpeed">Wind Speed: 6.2km/h</p>
+          </div>
+          <div class="modal-footer" id="ideasFooter">
+            <p class="text-center" id="modalFooterText">
+              We have the perfect product for that weather conditions!
+            </p>
+            <button
+              type="button"
+              class="btn btn-dark"
+              data-bs-dismiss="modal"
+              id="modalFooterBtn1"
+            >
+              Not interested
+            </button>
+            <button
+              type="button"
+              id="weatherProductsButton"
+              class="btn btn-dark"
+            >
+              SHOW ME
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container-fluid navbar fixed-top">
       <a class="m-2 position-absolute top-1 start-0" href="index.html"
         ><img
