@@ -864,7 +864,7 @@ let weather = {
       `;
 
       const addButton = document.createElement("button");
-      addButton.classList.add("btn", "btn-dark", "addToCartBtn");
+      addButton.classList.add("btn", "btn-dark", "addToCartBtn", "mt-2");
       addButton.dataset.id = product.id;
       addButton.innerText = "ADD TO CART";
       addButton.addEventListener("click", () => {
@@ -887,6 +887,7 @@ searchCityButton.addEventListener("click", () => {
 
 document.querySelector("#searchCity").addEventListener("keyup", (event) => {
   if (event.key == "Enter") {
+    event.preventDefault();
     weather.search();
   }
 });
