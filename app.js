@@ -3,7 +3,7 @@ class DataBase {
   constructor() {
     this.proucts = [];
     //Uploading all products available
-    //Since we are now using local JSON document to load the products we no longer nees the products here
+    //Since we are now using local JSON document to load the products we no longer need the products here
     //this.addRegister(
     //  1,
     //  "Evolve 3D Pro Air Jersey",
@@ -383,16 +383,17 @@ class DataBase {
     this.proucts = await response.json();
     return this.proucts;
   }
-
+  //Bring Registers Method
   registerById(id) {
     return this.proucts.find((product) => product.id == id);
   }
-
+  //Bring Registers by Keyword
   registerByName(word) {
     return this.proucts.filter((product) =>
       product.name.toLowerCase().includes(word)
     );
   }
+  //Bring Registers by Category
   registerByCategory(keyword) {
     return this.proucts.filter((product) => product.category.includes(keyword));
   }
@@ -407,11 +408,11 @@ class Cart {
     this.totalProducts = 0;
     this.list();
   }
-
+  //Find products in Cart
   inCart({ id }) {
     return this.cart.find((product) => product.id === id);
   }
-
+  //Add to Cart
   addToCart(product) {
     let productOnCart = this.inCart(product);
     if (productOnCart) {
@@ -432,7 +433,7 @@ class Cart {
       },
     }).showToast();
   }
-
+  //Remove from Cart
   remove(id) {
     const index = this.cart.findIndex((product) => product.id === id);
     const productName = this.cart[index].name;
@@ -454,7 +455,7 @@ class Cart {
     localStorage.setItem("cart", JSON.stringify(this.cart));
     this.list();
   }
-
+  //Change amount from cart
   add(id) {
     const index = this.cart.findIndex((product) => product.id === id);
     if (this.cart[index].amount >= 1) {
@@ -463,7 +464,7 @@ class Cart {
     localStorage.setItem("cart", JSON.stringify(this.cart));
     this.list();
   }
-
+  //List Products on Cart
   list() {
     this.total = 0;
     this.totalProducts = 0;
@@ -759,7 +760,7 @@ scrollUpButton.addEventListener("click", () => {
 let weather = {
   apiKey: "4f8f206d6a7ee8151b6166de633716b5",
   result: "",
-
+  //Fetch Api
   fetchWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -778,7 +779,7 @@ let weather = {
         this.displayWeather(data);
       });
   },
-
+  //Display Weather
   displayWeather: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
@@ -797,7 +798,7 @@ let weather = {
     weatherHumidity.innerText = "Humidity: " + humidity + " %";
     windSpeed.innerText = "Wind Speed: " + speed + " km/h";
     this.cityName = name;
-
+    //Stablish weather Category products from Icons on Api
     if (icon.includes("01") || icon.includes("02")) {
       this.result = "sunny";
     } else if (icon.includes("03") || icon.includes("04")) {
@@ -814,11 +815,11 @@ let weather = {
       this.result = "";
     }
   },
-
+  //Search weather by city
   search: function () {
     this.fetchWeather(document.querySelector("#searchCity").value);
   },
-
+  //Fetch products locally depending on weather (icon stablished)
   productsByWeather: function () {
     if (this.result === "sunny") {
       this.fetchProducts("sunny");
@@ -832,7 +833,7 @@ let weather = {
       alert("No products available for the current weather.");
     }
   },
-
+  //Indicates local JSON docs by watherType
   fetchProducts: function (weatherType) {
     const productsURL = `./products_${weatherType}.json`;
     fetch(productsURL)
@@ -840,7 +841,7 @@ let weather = {
       .then((products) => this.displayProducts(products))
       .catch((error) => console.error(error));
   },
-
+  //Display weather
   displayProducts: function (products) {
     const ideasModalBody = document.querySelector("#ideasModalBody");
     ideasModalBody.innerHTML = "";
@@ -879,19 +880,19 @@ let weather = {
     }
   },
 };
-
+//Search Event click
 const searchCityButton = document.querySelector("#searchCityButton");
 searchCityButton.addEventListener("click", () => {
   weather.search();
 });
-
+//Search Event enter
 document.querySelector("#searchCity").addEventListener("keyup", (event) => {
+  event.preventDefault();
   if (event.key == "Enter") {
-    event.preventDefault();
     weather.search();
   }
 });
-
+//Modal changes on api response
 const weatherProductsButton = document.querySelector("#weatherProductsButton");
 weatherProductsButton.addEventListener("click", () => {
   weather.productsByWeather();
@@ -904,5 +905,5 @@ weatherProductsButton.addEventListener("click", () => {
     location.reload();
   });
 });
-
+//Fetch weather by default
 weather.fetchWeather("Barcelona");
