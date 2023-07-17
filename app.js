@@ -1,7 +1,7 @@
 //Class to simulate a DB to upload all products in the ecommerce.
 class DataBase {
   constructor() {
-    this.proucts = [];
+    this.products = [];
     //Uploading all products available
     //Since we are now using local JSON document to load the products we no longer need the products here
     //this.addRegister(
@@ -369,33 +369,35 @@ class DataBase {
   //Since we are working with local JSON document we no longer need this method
   //addRegister(id, name, price, color, image, category) {
   //  const product = new Product(id, name, price, color, image, category);
-  //  this.proucts.push(product);
+  //  this.products.push(product);
   //}
 
   //Old bringRegisters method
   //bringRegisters() {
-  //  return this.proucts;
+  //  return this.products;
   //}
 
   //Async bring registers locally method
   async bringRegisters() {
     const response = await fetch("./products.json");
-    this.proucts = await response.json();
-    return this.proucts;
+    this.products = await response.json();
+    return this.products;
   }
   //Bring Registers Method
   registerById(id) {
-    return this.proucts.find((product) => product.id == id);
+    return this.products.find((product) => product.id == id);
   }
   //Bring Registers by Keyword
   registerByName(word) {
-    return this.proucts.filter((product) =>
+    return this.products.filter((product) =>
       product.name.toLowerCase().includes(word)
     );
   }
   //Bring Registers by Category
   registerByCategory(keyword) {
-    return this.proucts.filter((product) => product.category.includes(keyword));
+    return this.products.filter((product) =>
+      product.category.includes(keyword)
+    );
   }
 }
 
@@ -882,7 +884,8 @@ let weather = {
 };
 //Search Event click
 const searchCityButton = document.querySelector("#searchCityButton");
-searchCityButton.addEventListener("click", () => {
+searchCityButton.addEventListener("click", (event) => {
+  event.preventDefault();
   weather.search();
 });
 //Search Event enter
